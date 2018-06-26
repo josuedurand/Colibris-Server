@@ -1,0 +1,18 @@
+{
+    "title": "Les Fourberies de Scapin",
+    "author": "Molière",
+    "publisher": {
+        "type": "ObjectId",
+        "ref": "Publishers"
+    },
+    "collection": {
+        "type": "ObjectId",
+        "ref": "Collections"
+    },
+    "language": "Français",
+    "publishedDate": "2016-04-13T12:00:00Z",
+    "pages": 144,
+    "cover": "https://images-na.ssl-images-amazon.com/images/I/51JW7IBS-YL._SX345_BO1,204,203,200_.jpg",
+    "ISBN10": 2013949677,
+    "ISBN13": 9782013949675
+}

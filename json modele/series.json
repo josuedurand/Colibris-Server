@@ -1,0 +1,11 @@
+{
+    "college": {
+        "type": "ObjectId",
+        "ref": "Colleges"
+    },
+    "barCode": 47862133,
+    "quantity": 30,
+    "classLevel": [6],
+    "status": "in, out",
+    "disponibility": "non exportable, exportable, réformée"
+}

@@ -1,0 +1,293 @@
+Site : http://iziprev.otf.cloud/mxgraph/schema.html
+
+
+
+
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" style="table" parent="1" vertex="1">
+      <Table name="Collections" as="value"/>
+      <mxGeometry x="550" y="260" width="200" height="106" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="3" parent="2" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="2" vertex="1" connectable="0">
+      <Column name="name" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="32" parent="2" vertex="1" connectable="0">
+      <Column name="Publishers_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" style="table" parent="1" vertex="1">
+      <Table name="Booking" as="value"/>
+      <mxGeometry x="226" y="586" width="200" height="262" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="5" parent="4" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="51" parent="4" vertex="1" connectable="0">
+      <Column name="startDate" type="Date" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="52" parent="4" vertex="1" connectable="0">
+      <Column name="endDate" type="Date" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="53" parent="4" vertex="1" connectable="0">
+      <Column name="requestDate" type="Date" as="value"/>
+      <mxGeometry y="106" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="54" parent="4" vertex="1" connectable="0">
+      <Column name="Users_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="132" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="56" parent="4" vertex="1" connectable="0">
+      <Column name="Colleges_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="158" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="60" parent="4" vertex="1" connectable="0">
+      <Column name="Series_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="184" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="76" vertex="1" connectable="0" parent="4">
+      <Column name="status" as="value"/>
+      <mxGeometry y="210" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="77" vertex="1" connectable="0" parent="4">
+      <Column name="decisionDate" type="Date" as="value"/>
+      <mxGeometry y="236" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" style="table" parent="1" vertex="1">
+      <Table name="Colleges" as="value"/>
+      <mxGeometry x="560" y="480" width="200" height="236" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="7" parent="6" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="24" parent="6" vertex="1" connectable="0">
+      <Column name="name" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="25" parent="6" vertex="1" connectable="0">
+      <Column name="phoneCDI" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="26" parent="6" vertex="1" connectable="0">
+      <Column name="address1" as="value"/>
+      <mxGeometry y="106" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="6" vertex="1" connectable="0">
+      <Column name="address2" as="value"/>
+      <mxGeometry y="132" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="28" parent="6" vertex="1" connectable="0">
+      <Column name="city" as="value"/>
+      <mxGeometry y="158" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="29" parent="6" vertex="1" connectable="0">
+      <Column name="zipCode" as="value"/>
+      <mxGeometry y="184" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="30" parent="6" vertex="1" connectable="0">
+      <Column name="uai" unique="1" as="value"/>
+      <mxGeometry y="210" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" style="table" parent="1" vertex="1">
+      <Table name="Editions" as="value"/>
+      <mxGeometry x="550" y="10" width="200" height="236" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="9" parent="8" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="35" parent="8" vertex="1" connectable="0">
+      <Column name="title" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="36" parent="8" vertex="1" connectable="0">
+      <Column name="language" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="37" parent="8" vertex="1" connectable="0">
+      <Column name="publishedDate" as="value"/>
+      <mxGeometry y="106" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="38" parent="8" vertex="1" connectable="0">
+      <Column name="pages" type="Number" as="value"/>
+      <mxGeometry y="132" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="39" parent="8" vertex="1" connectable="0">
+      <Column name="cover" as="value"/>
+      <mxGeometry y="158" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="41" parent="8" vertex="1" connectable="0">
+      <Column name="ISBN" as="value"/>
+      <mxGeometry y="184" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="42" parent="8" vertex="1" connectable="0">
+      <Column name="Collections_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="210" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" style="table" parent="1" vertex="1">
+      <Table name="Users" as="value"/>
+      <mxGeometry x="230" y="274" width="200" height="236" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="11" parent="10" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" parent="10" vertex="1" connectable="0">
+      <Column name="civility" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" parent="10" vertex="1" connectable="0">
+      <Column name="lastName" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="18" parent="10" vertex="1" connectable="0">
+      <Column name="firstName" as="value"/>
+      <mxGeometry y="106" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="19" parent="10" vertex="1" connectable="0">
+      <Column name="email" as="value"/>
+      <mxGeometry y="132" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="20" parent="10" vertex="1" connectable="0">
+      <Column name="password" as="value"/>
+      <mxGeometry y="158" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="10" vertex="1" connectable="0">
+      <Column name="profil" type="[String]" as="value"/>
+      <mxGeometry y="184" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="22" parent="10" vertex="1" connectable="0">
+      <Column name="Colleges_extId" type="[ObjectId]" as="value"/>
+      <mxGeometry y="210" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" style="table" parent="1" vertex="1">
+      <Table name="Series" as="value"/>
+      <mxGeometry x="850" y="680" width="200" height="236" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="13" parent="12" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="44" parent="12" vertex="1" connectable="0">
+      <Column name="barCode" type="Number" unique="1" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="45" parent="12" vertex="1" connectable="0">
+      <Column name="quantity" type="Number" as="value"/>
+      <mxGeometry y="80" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="46" parent="12" vertex="1" connectable="0">
+      <Column name="classLevel" type="[Number]" as="value"/>
+      <mxGeometry y="106" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="48" parent="12" vertex="1" connectable="0">
+      <Column name="disponibility" as="value"/>
+      <mxGeometry y="132" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="49" parent="12" vertex="1" connectable="0">
+      <Column name="Colleges_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="158" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="58" parent="12" vertex="1" connectable="0">
+      <Column name="Editions_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="184" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="78" vertex="1" connectable="0" parent="12">
+      <Column name="status" as="value"/>
+      <mxGeometry y="210" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" style="table" parent="1" vertex="1">
+      <Table name="Publishers" as="value"/>
+      <mxGeometry x="560" y="380" width="200" height="80" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="15" parent="14" vertex="1" connectable="0">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="34" parent="14" vertex="1" connectable="0">
+      <Column name="name" as="value"/>
+      <mxGeometry y="54" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="23" parent="1" source="22" target="7" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" source="32" target="15" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="43" parent="1" source="42" target="3" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="50" parent="1" source="49" target="7" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="55" parent="1" source="54" target="11" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="57" parent="1" source="56" target="7" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="59" parent="1" source="58" target="9" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="61" parent="1" source="60" target="13" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="62" style="table" vertex="1" parent="1">
+      <Table name="Comments" as="value"/>
+      <mxGeometry x="-177" y="428" width="209.1154887583266" height="158" as="geometry">
+        <mxRectangle width="200" height="28" as="alternateBounds"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="63" vertex="1" connectable="0" parent="62">
+      <Column name="_id" type="ObjectId" primaryKey="1" autoIncrement="1" as="value"/>
+      <mxGeometry y="28" width="209.1154887583266" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="64" vertex="1" connectable="0" parent="62">
+      <Column name="comment" as="value"/>
+      <mxGeometry y="54" width="209.1154887583266" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="67" vertex="1" connectable="0" parent="62">
+      <Column name="date" type="Date" as="value"/>
+      <mxGeometry y="80" width="209.1154887583266" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="72" vertex="1" connectable="0" parent="62">
+      <Column name="Users_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="106" width="209.1154887583266" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="74" vertex="1" connectable="0" parent="62">
+      <Column name="Booking_extId" type="ObjectId" as="value"/>
+      <mxGeometry y="132" width="209.1154887583266" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="73" edge="1" parent="1" source="72" target="11">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="75" edge="1" parent="1" source="74" target="5">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

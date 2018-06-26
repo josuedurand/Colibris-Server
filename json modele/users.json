@@ -1,0 +1,14 @@
+{
+    "civility": "Mme",
+    "lastName": "toto",
+    "firstName": "lolo",
+    "mail": "C.test.Cdi@ac-bordeaux.fr",
+    "password": "123456789",
+    "profil": "documentaliste",
+    "college": [
+       {
+        "type": "ObjectId",
+        "ref": "colleges"
+       }
+    ]
+}
