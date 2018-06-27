@@ -8,7 +8,7 @@ module.exports = {
 			if (err) {
 				next(err);
 			} else {
-				res.json({ status: "success", message: "Serie found.", data: { series: serieInfo } });
+				res.json({ status: "success", message: `Série ${req.params.serieId} trouvé avec succés.`, data: { series: serieInfo } });
 			}
 		});
 	},
@@ -19,9 +19,18 @@ module.exports = {
 				next(err);
 			} else {
 				for (let serie of series) {
-					seriesList.push({ id: serie._id, name: serie.name, released_on: serie.released_on });
+					seriesList.push({
+						id: serie._id,
+						// faire un populate
+						college: serie.college,
+						barCode: serie.barCode,
+						quantity: serie.quantity,
+						classLevel: serie.classLevel,
+						status: serie.status,
+						disponibility: serie.disponibility
+					});
 				}
-				res.json({ status: "success", message: "Series list found.", data: { series: seriesList } });
+				res.json({ status: "success", message: "Liste des séries trouvé avec succés.", data: { series: seriesList } });
 			}
 		});
 	},
@@ -30,7 +39,7 @@ module.exports = {
 			if (err)
 				next(err);
 			else {
-				res.json({ status: "success", message: "Serie updated successfully.", data: null });
+				res.json({ status: "success", message: `Série ${req.params.serieId} mise à jour avec succés.`, data: null });
 			}
 		});
 	},
@@ -39,7 +48,7 @@ module.exports = {
 			if (err)
 				next(err);
 			else {
-				res.json({ status: "success", message: "Serie deleted successfully.", data: null });
+				res.json({ status: "success", message: `Série ${req.params.serieId} supprimé avec succés.`, data: null });
 			}
 		});
 	},
@@ -48,7 +57,7 @@ module.exports = {
 			if (err)
 				next(err);
 			else {
-				res.json({ status: "success", message: "Serie added successfully.", data: null });
+				res.json({ status: "success", message: `Série ajouté avec succés.`, data: null });
 			}
 		});
 	}

@@ -26,7 +26,7 @@ const SerieSchema = new Schema({
         trim: true,
         required: true,
     },
-    nastatusme: {
+    status: {
         type: String,
         trim: true,
         required: true,
