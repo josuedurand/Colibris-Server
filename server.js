@@ -7,6 +7,10 @@ const
 	bodyParser = require('body-parser'),
 	jwt        = require('jsonwebtoken'),
 	users      = require('./routes/users'),
+	collections= require('.routes/collections'),
+	publishers = require('.routes/publishers'),
+	colleges   = require('.routes/colleges'),
+	editions   = require('.routes/editions'),
 	series     = require('./routes/series');
 
 // Cree un instance de express
@@ -33,10 +37,10 @@ app.get('/', function (req, res) {
 app.use('/users', users);
 app.use('/series', series);
 // app.use('/booking', booking);
-// app.use('/collecitons', booking);
-// app.use('/colleges', booking);
-// app.use('/editions', booking);
-// app.use('/publishers', booking);
+app.use('/collections', collections);
+app.use('/colleges', colleges);
+app.use('/editions', editions);
+app.use('/publishers', publishers);
 
 // app.use('/users', validateUser, users);
 // app.use('/series', validateUser, series);
