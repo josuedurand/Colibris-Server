@@ -26,25 +26,25 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req, res) {
-	res.json({ "message": "API Démarrée" });
+	res.status(200).json({ "message": "API Démarrée" });
 });
 
 // routes
 app.use('/users', users);
 app.use('/series', series);
 // app.use('/booking', booking);
-// app.use('/collecitons', booking);
-// app.use('/colleges', booking);
-// app.use('/editions', booking);
-// app.use('/publishers', booking);
+// app.use('/collecitons', collecitons);
+// app.use('/colleges', colleges);
+// app.use('/editions', editions);
+// app.use('/publishers', publishers);
 
 // app.use('/users', validateUser, users);
 // app.use('/series', validateUser, series);
 // app.use('/booking', validateUser, booking);
-// app.use('/collecitons', validateUser, booking);
-// app.use('/colleges', validateUser, booking);
-// app.use('/editions', validateUser, booking);
-// app.use('/publishers', validateUser, booking);
+// app.use('/collecitons', validateUser, collecitons);
+// app.use('/colleges', validateUser, colleges);
+// app.use('/editions', validateUser, editions);
+// app.use('/publishers', validateUser, publishers);
 
 app.get('/favicon.ico', function (req, res) {
 	res.sendStatus(204);
@@ -53,6 +53,7 @@ app.get('/favicon.ico', function (req, res) {
 function validateUser(req, res, next) {
 	jwt.verify(req.headers['x-access-token'], req.app.get('secretKey'), function (err, decoded) {
 		if (err) {
+			// Ajouter le status  // .status(404)
 			res.json({ status: "error", message: err.message, data: null });
 		} else {
 			// add user id to request
@@ -73,9 +74,9 @@ app.use(function (err, req, res, next) {
 	console.log(err);
 
 	if (err.status === 404) {
-		res.status(404).json({ message: "404 : Not found" });
+		res.status(404).json({ message: "Erreur 404 : Page introuvable" });
 	} else {
-		res.status(500).json({ message: "Erreur serveur : 500" });
+		res.status(500).json({ message: "Erreur 500 : Le serveur ne repond pas" });
 	}
 });
 

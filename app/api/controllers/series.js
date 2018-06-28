@@ -1,10 +1,10 @@
 
-const serieModel = require('../models/series');
+const models = require('../models/models');
 
 module.exports = {
 	getById: function (req, res, next) {
 		console.log(req.body);
-		serieModel.findById(req.params.serieId, function (err, serieInfo) {
+		models['Series'].findById(req.params.serieId, function (err, serieInfo) {
 			if (err) {
 				next(err);
 			} else {
@@ -12,30 +12,58 @@ module.exports = {
 			}
 		});
 	},
+	// getAll: function (req, res, next) {
+	// 	let seriesList = [];
+	// 	models['Series'].find({}, function (err, series) {
+	// 		if (err) {
+	// 			next(err);
+	// 		} else {
+	// 			for (let serie of series) {
+	// 				seriesList.push({
+	// 					id: serie._id,
+	// 					barCode: serie.barCode,
+	// 					quantity: serie.quantity,
+	// 					classLevel: serie.classLevel,
+	// 					status: serie.status,
+	// 					disponibility: serie.disponibility,
+	// 					// faire un populate
+	// 					college: serie.college,
+	// 					// faire un populate
+	// 					edition: serie.edition,
+
+	// 				});
+	// 			}
+	// 			res.json({ status: "success", message: "Liste des séries trouvé avec succés.", data: { series: seriesList } });
+	// 		}
+	// 	});
+	// },
 	getAll: function (req, res, next) {
-		let seriesList = [];
-		serieModel.find({}, function (err, series) {
-			if (err) {
-				next(err);
-			} else {
-				for (let serie of series) {
-					seriesList.push({
-						id: serie._id,
-						// faire un populate
-						college: serie.college,
-						barCode: serie.barCode,
-						quantity: serie.quantity,
-						classLevel: serie.classLevel,
-						status: serie.status,
-						disponibility: serie.disponibility
-					});
+		models['Series']
+			.find({})
+			.populate('colleges_extId')
+			.populate('editions_extId')
+			.lean()
+			.exec((error, result) => {
+				if (error) {
+					throw error;
+				} else {
+					/** todo : ici parcourir le tableau series en retour des populates 
+					 * pour récupérer les _id des collections
+					*/
+
+				
 				}
-				res.json({ status: "success", message: "Liste des séries trouvé avec succés.", data: { series: seriesList } });
-			}
-		});
+			});
+		// 	res
+		// 	.status(200)
+		// 	.json({
+		// 		status: "success",
+		// 		message: "Liste des séries trouvé avec succés.",
+		// 		data: { series: result }
+		// });
 	},
 	updateById: function (req, res, next) {
-		serieModel.findByIdAndUpdate(req.params.serieId, { name: req.body.name }, function (err, serieInfo) {
+		models['Series'].findByIdAndUpdate(req.params.serieId, { name: req.body.name }, function (err, serieInfo) {
 			if (err)
 				next(err);
 			else {
@@ -44,7 +72,7 @@ module.exports = {
 		});
 	},
 	deleteById: function (req, res, next) {
-		serieModel.findByIdAndRemove(req.params.serieId, function (err, serieInfo) {
+		models['Series'].findByIdAndRemove(req.params.serieId, function (err, serieInfo) {
 			if (err)
 				next(err);
 			else {
@@ -53,7 +81,7 @@ module.exports = {
 		});
 	},
 	create: function (req, res, next) {
-		serieModel.create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
+		models['Series'].create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
 			if (err)
 				next(err);
 			else {

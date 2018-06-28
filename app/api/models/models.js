@@ -1,4 +1,5 @@
-const fs = require('fs');
+
+const fs       = require('fs');
 const mongoose = require('mongoose');
 
 const allModels = {};
@@ -13,7 +14,7 @@ for (modelName in database_models) {
     console.log("model "+ modelName + " chargé !");
 }
 
-console.log(allModels["Users"].schema);
+// console.log(allModels["Users"].schema);
 
 module.exports = allModels;
 

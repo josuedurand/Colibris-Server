@@ -8,6 +8,7 @@ API pour les relations de données entre la base MongoDB et le client sur Anglua
 - [x] Connection a mlab
 - [x] Externaliser les config
 - [x] Ajouter la gestion des series
+- [ ] Corriger les statut de res.json -> res.status(404).json()
 - [ ] Changer le systeme public / privé
 - [ ] pouvoir avec un compte administrateur cree, afficher, mettre a jour et suppromé un compte
 - [ ] ajouter les routes manquantes

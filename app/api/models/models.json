@@ -4,7 +4,7 @@
         "schema": {
             "_id": "ObjectId",
             "name": "String",
-            "Publishers_extId": {
+            "publishers_extId": {
                 "type": "ObjectId",
                 "ref": "Publishers"
             }
@@ -18,15 +18,15 @@
             "endDate": "Date",
             "requestDate": "Date",
             "decisionDate": "Date",
-            "Users_extId": {
+            "users_extId": {
                 "type": "ObjectId",
                 "ref": "Users"
             },
-            "Colleges_extId": {
+            "colleges_extId": {
                 "type": "ObjectId",
                 "ref": "Colleges"
             },
-            "Series_extId": {
+            "series_extId": {
                 "type": "ObjectId",
                 "ref": "Series"
             },
@@ -50,13 +50,14 @@
         "collection": "editions",
         "schema": {
             "_id": "ObjectId",
+            "author": "String",
             "title": "String",
             "language": "String",
             "publishedDate": "Date",
             "pages": "Number",
             "cover": "String",
-            "ISBN": "String",
-            "Collections_extId": {
+            "ISBN": "Number",
+            "collections_extId": {
                 "type": "ObjectId",
                 "ref": "Collections"
             }
@@ -72,7 +73,7 @@
             "email": "String",
             "password": "String",
             "profil": "String",
-            "Colleges_extId": {
+            "colleges_extId": {
                 "type": ["ObjectId"],
                 "ref": "Colleges"
             }
@@ -86,11 +87,11 @@
             "quantity": "Number",
             "classLevel": ["Number"],
             "disponibility": "String",
-            "Colleges_extId": {
-                "type": ["ObjectId"],
+            "colleges_extId": {
+                "type": "ObjectId",
                 "ref": "Colleges"
             },
-            "Editions_extId": {
+            "editions_extId": {
                 "type": "ObjectId",
                 "ref": "Editions"
             },
@@ -110,11 +111,11 @@
             "_id": "ObjectId",
             "comment": "String",
             "date": "Date",
-            "Users_extId": {
+            "users_extId": {
                 "type": "ObjectId",
                 "ref": "Users"
             },
-            "Booking_extId": {
+            "booking_extId": {
                 "type": "ObjectId",
                 "ref": "Booking"
             }
