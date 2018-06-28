@@ -29,10 +29,22 @@ app.get('/', function (req, res) {
 	res.json({ "message": "API Démarrée" });
 });
 
-// public route
+// routes
 app.use('/users', users);
-// private route
-app.use('/series', validateUser, series);
+app.use('/series', series);
+// app.use('/booking', booking);
+// app.use('/collecitons', booking);
+// app.use('/colleges', booking);
+// app.use('/editions', booking);
+// app.use('/publishers', booking);
+
+// app.use('/users', validateUser, users);
+// app.use('/series', validateUser, series);
+// app.use('/booking', validateUser, booking);
+// app.use('/collecitons', validateUser, booking);
+// app.use('/colleges', validateUser, booking);
+// app.use('/editions', validateUser, booking);
+// app.use('/publishers', validateUser, booking);
 
 app.get('/favicon.ico', function (req, res) {
 	res.sendStatus(204);

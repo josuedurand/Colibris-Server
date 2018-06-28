@@ -17,6 +17,7 @@
             "startDate": "Date",
             "endDate": "Date",
             "requestDate": "Date",
+            "decisionDate": "Date",
             "Users_extId": {
                 "type": "ObjectId",
                 "ref": "Users"
@@ -29,8 +30,7 @@
                 "type": "ObjectId",
                 "ref": "Series"
             },
-            "status": "String",
-            "decisionDate": "Date"
+            "status": "String"
         }
     },
     "Colleges": {
