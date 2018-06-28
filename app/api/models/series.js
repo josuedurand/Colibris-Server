@@ -23,6 +23,8 @@ const SerieSchema = new Schema({
     },
     classLevel: {
         type: [Number],
+        min: 3,
+        max: 6,
         trim: true,
         required: true,
     },

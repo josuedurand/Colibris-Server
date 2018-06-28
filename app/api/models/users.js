@@ -42,7 +42,15 @@ const UserSchema = new Schema({
 		ref: 'colleges',
 		trim: true,
 		required: true,
-	}
+	},
+	// A ajouter si le compte est créé avec le formulaire d'inscription (pour professeur)
+	// Si cree par un admin passer a true
+	// validate: {
+	// 	type: Boolean,
+	// 	default: false,
+	// 	trim: true,
+	// 	required: true
+	// }
 });
 
 // hash user password before saving into database
