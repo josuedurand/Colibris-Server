@@ -1,0 +1,123 @@
+{
+    "Collections": {
+        "collection": "collections",
+        "schema": {
+            "_id": "ObjectId",
+            "name": "String",
+            "Publishers_extId": {
+                "type": "ObjectId",
+                "ref": "Publishers"
+            }
+        }
+    },
+    "Booking": {
+        "collection": "booking",
+        "schema": {
+            "_id": "ObjectId",
+            "startDate": "Date",
+            "endDate": "Date",
+            "requestDate": "Date",
+            "Users_extId": {
+                "type": "ObjectId",
+                "ref": "Users"
+            },
+            "Colleges_extId": {
+                "type": "ObjectId",
+                "ref": "Colleges"
+            },
+            "Series_extId": {
+                "type": "ObjectId",
+                "ref": "Series"
+            },
+            "status": "String",
+            "decisionDate": "Date"
+        }
+    },
+    "Colleges": {
+        "collection": "colleges",
+        "schema": {
+            "_id": "ObjectId",
+            "name": "String",
+            "phoneCDI": "String",
+            "address1": "String",
+            "address2": "String",
+            "city": "String",
+            "zipCode": "Number",
+            "uai": "String"
+        }
+    },
+    "Editions": {
+        "collection": "editions",
+        "schema": {
+            "_id": "ObjectId",
+            "title": "String",
+            "language": "String",
+            "publishedDate": "Date",
+            "pages": "Number",
+            "cover": "String",
+            "ISBN": "String",
+            "Collections_extId": {
+                "type": "ObjectId",
+                "ref": "Collections"
+            }
+        }
+    },
+    "Users": {
+        "collection": "users",
+        "schema": {
+            "_id": "ObjectId",
+            "civility": "String",
+            "lastName": "String",
+            "firstName": "String",
+            "email": "String",
+            "password": "String",
+            "profil": "String",
+            "Colleges_extId": {
+                "type": ["ObjectId"],
+                "ref": "Colleges"
+            }
+        }
+    },
+    "Series": {
+        "collection": "series",
+        "schema": {
+            "_id": "ObjectId",
+            "barCode": "Number",
+            "quantity": "Number",
+            "classLevel": ["Number"],
+            "disponibility": "String",
+            "Colleges_extId": {
+                "type": ["ObjectId"],
+                "ref": "Colleges"
+            },
+            "Editions_extId": {
+                "type": "ObjectId",
+                "ref": "Editions"
+            },
+            "status": "String"
+        }
+    },
+    "Publishers": {
+        "collection": "publishers",
+        "schema": {
+            "_id": "ObjectId",
+            "name": "String"
+        }
+    },
+    "Comments": {
+        "collection": "comments",
+        "schema": {
+            "_id": "ObjectId",
+            "comment": "String",
+            "date": "Date",
+            "Users_extId": {
+                "type": "ObjectId",
+                "ref": "Users"
+            },
+            "Booking_extId": {
+                "type": "ObjectId",
+                "ref": "Booking"
+            }
+        }
+    }
+}
