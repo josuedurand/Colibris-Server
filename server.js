@@ -7,6 +7,10 @@ const
 	bodyParser = require('body-parser'),
 	jwt        = require('jsonwebtoken'),
 	users      = require('./routes/users'),
+	collections= require('.routes/collections'),
+	publishers = require('.routes/publishers'),
+	colleges   = require('.routes/colleges'),
+	editions   = require('.routes/editions'),
 	series     = require('./routes/series');
 
 // Cree un instance de express
