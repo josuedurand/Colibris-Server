@@ -11,7 +11,9 @@ const
 	publishers = require('.routes/publishers'),
 	colleges   = require('.routes/colleges'),
 	editions   = require('.routes/editions'),
-	series     = require('./routes/series');
+	series     = require('./routes/series'),
+	bookings	= require('./routes/bookings'),
+	comments	= require('./routes/comments');
 
 // Cree un instance de express
 const app = express();
@@ -36,19 +38,12 @@ app.get('/', function (req, res) {
 // routes
 app.use('/users', users);
 app.use('/series', series);
-// app.use('/booking', booking);
-// app.use('/collecitons', collecitons);
-// app.use('/colleges', colleges);
-// app.use('/editions', editions);
-// app.use('/publishers', publishers);
-
-// app.use('/users', validateUser, users);
-// app.use('/series', validateUser, series);
-// app.use('/booking', validateUser, booking);
-// app.use('/collecitons', validateUser, collecitons);
-// app.use('/colleges', validateUser, colleges);
-// app.use('/editions', validateUser, editions);
-// app.use('/publishers', validateUser, publishers);
+app.use('/bookings', bookings);
+app.use('/collecitons', collecitons);
+app.use('/colleges', colleges);
+app.use('/editions', editions);
+app.use('/publishers', publishers);
+app.use('/comments', comments);
 
 app.get('/favicon.ico', function (req, res) {
 	res.sendStatus(204);
