@@ -50,7 +50,13 @@ module.exports = {
 					/** todo : ici parcourir le tableau series en retour des populates 
 					 * pour récupérer les _id des collections
 					*/
-
+					res
+						.status(200)
+						.json({
+							status: "success",
+							message: "Liste des séries trouvé avec succés.",
+							data: { series: result }
+					});
 				
 				}
 			});

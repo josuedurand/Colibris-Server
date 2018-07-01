@@ -18,7 +18,7 @@ module.exports = {
 			if (err) {
 				next(err);
 			} else {
-				res.json({ status: "success", message: "Utilisateur ajouté avec succés", data: null });
+				res.json({ status: "success", message: "Utilisateur ajouté avec succés.", data: null });
 			}
 		});
 	},
