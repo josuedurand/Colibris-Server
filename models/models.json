@@ -74,7 +74,7 @@
             "password": "String",
             "profil": "String",
             "colleges_extId": {
-                "type": ["ObjectId"],
+                "type": "ObjectId",
                 "ref": "Colleges"
             }
         }

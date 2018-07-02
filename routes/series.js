@@ -2,7 +2,7 @@
 const
     express         = require('express'),
     router          = express.Router(),
-    serieController = require('../app/api/controllers/series');
+    serieController = require('../controllers/series');
 
 router.get('/', serieController.getAll);
 router.post('/', serieController.create);

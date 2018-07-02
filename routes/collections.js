@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const collectionController = require('../app/api/controllers/collections');
+const collectionController = require('../controllers/collections');
 
 router.get('/', collectionController.getAll);
 router.post('/', collectionController.create);

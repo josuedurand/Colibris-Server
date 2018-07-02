@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const editionController = require('../app/api/controllers/editions');
+const editionController = require('../controllers/editions');
 
 router.get('/', editionController.getAll);
 router.post('/', editionController.create);

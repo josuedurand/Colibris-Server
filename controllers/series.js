@@ -1,5 +1,6 @@
 
 const models = require('../models/models');
+// const ObjectId = mongoose.Schema.Types.ObjectId;
 
 module.exports = {
 	getById: function (req, res, next) {
@@ -41,15 +42,22 @@ module.exports = {
 		models['Series']
 			.find({})
 			.populate('colleges_extId')
-			.populate('editions_extId')
+			.populate({
+				path: 'editions_extId',
+				populate: {
+					path: 'collections_extId',
+					model: models['Collections'],
+					populate: {
+						path: 'publishers_extId',
+						model: models['Publishers']
+					}
+				}
+			})
 			.lean()
 			.exec((error, result) => {
 				if (error) {
 					throw error;
 				} else {
-					/** todo : ici parcourir le tableau series en retour des populates 
-					 * pour récupérer les _id des collections
-					*/
 					res
 						.status(200)
 						.json({
@@ -60,13 +68,6 @@ module.exports = {
 				
 				}
 			});
-		// 	res
-		// 	.status(200)
-		// 	.json({
-		// 		status: "success",
-		// 		message: "Liste des séries trouvé avec succés.",
-		// 		data: { series: result }
-		// });
 	},
 	updateById: function (req, res, next) {
 		models['Series'].findByIdAndUpdate(req.params.serieId, { name: req.body.name }, function (err, serieInfo) {
@@ -87,7 +88,13 @@ module.exports = {
 		});
 	},
 	create: function (req, res, next) {
-		models['Series'].create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
+
+
+		models['Series'].create({
+			name: req.body.name,
+			released_on: req.body.released_on,
+			editions_extId:  ''
+		}, function (err, result) {
 			if (err)
 				next(err);
 			else {
