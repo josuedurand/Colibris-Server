@@ -13,5 +13,5 @@ API pour les relations de données entre la base MongoDB et le client sur Anglua
 - [ ] Changer le systeme public / privé
 - [ ] pouvoir avec un compte administrateur cree, afficher, mettre a jour et suppromé un compte
 - [ ] ajouter les routes manquantes
-- [ ] ajouter les schemas manquant
-- [ ] Optimiser l'organisation des fichier
+- [x] ajouter les schemas manquant
+- [x] Optimiser l'organisation des fichier
