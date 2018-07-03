@@ -1,0 +1,24 @@
+﻿collections -> publishers
+booking -> users
+booking -> colleges
+booking -> series
+editions -> collections
+users -> colleges
+series -> colleges
+series -> editions
+comments -> users
+comments -> booking
+
+series
+	data
+	collections
+	editions
+	publishers
+	booking
+	users
+	comments
+
+series
+	edition
+		collection
+			publisher

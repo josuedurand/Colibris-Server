@@ -73,10 +73,10 @@
             "email": "String",
             "password": "String",
             "profil": "String",
-            "colleges_extId": {
+            "colleges_extId": [{
                 "type": "ObjectId",
                 "ref": "Colleges"
-            }
+            }]
         }
     },
     "Series": {
