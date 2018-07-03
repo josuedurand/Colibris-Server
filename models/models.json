@@ -60,7 +60,11 @@
             "collections_extId": {
                 "type": "ObjectId",
                 "ref": "Collections"
-            }
+            },
+            "series_extId": [{
+                "type": "ObjectId",
+                "ref": "Collections"
+            }]
         }
     },
     "Users": {
@@ -90,10 +94,6 @@
             "colleges_extId": {
                 "type": "ObjectId",
                 "ref": "Colleges"
-            },
-            "editions_extId": {
-                "type": "ObjectId",
-                "ref": "Editions"
             },
             "status": "String"
         }

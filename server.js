@@ -7,11 +7,11 @@ const
 	bodyParser  = require('body-parser'),
 	jwt         = require('jsonwebtoken'),
 	users       = require('./routes/users'),
-	series      = require('./routes/series');
+	editions    = require('./routes/editions');
+	// series      = require('./routes/series'),
 	// collections = require('./routes/collections'),
 	// publishers  = require('./routes/publishers'),
 	// colleges    = require('./routes/colleges'),
-	// editions    = require('./routes/editions'),
 	// bookings    = require('./routes/bookings'),
 	// comments    = require('./routes/comments');
 
@@ -37,11 +37,11 @@ app.get('/', function (req, res) {
 
 // routes
 app.use('/users', users);
-app.use('/series', series);
+app.use('/editions', editions);
+// app.use('/series', series);
 // app.use('/bookings', bookings);
 // app.use('/collecitons', collecitons);
 // app.use('/colleges', colleges);
-// app.use('/editions', editions);
 // app.use('/publishers', publishers);
 // app.use('/comments', comments);
 

@@ -1,9 +1,8 @@
 
 const
-	models   = require('../models/models'),
-	bcrypt   = require('bcrypt'),
-	jwt      = require('jsonwebtoken'),
-	ObjectId = require('mongoose').Types.ObjectId;
+	models     = require('../models/models'),
+	jwt        = require('jsonwebtoken'),
+	ObjectId   = require('mongoose').Types.ObjectId;
 
 module.exports = {
 	create: function (req, res, next) {
@@ -77,31 +76,21 @@ module.exports = {
 		function passwordCall() {
 			let password = req.body.password;
 			return new Promise( changePassword => {
-				console.log('req.body.password', req.body.password);
 				if (req.body.password === null || req.body.password === '' || req.body.password === undefined) {
-					console.log('Entre dans if')
 					models['Users'].findOne({ _id: req.params.userId }, (error, user, next) => {
 						if (error) {
 							next(error);
 						}
-						console.log('user', user)
 						changePassword(user.password);
 					});
-					console.log('password dan if', password);
-				} else {
-					console.log('else', req.body.password);
-					console.log('else password', password);
-					
+				} else {					
 					changePassword(password);
 				}
 			});
 		}
 
-		async function asyncCall() {
-			
-			console.log('calling');
+		(async function asyncCall() {
 			models['Users'].findByIdAndUpdate(req.params.userId, {
-				printData: () => console.log('coucou'),
 				civility: req.body.civility,
 				lastName: req.body.lastName,
 				firstName: req.body.firstName,
@@ -113,7 +102,6 @@ module.exports = {
 				if (err)
 					next(err);
 				else {
-					console.log(user);
 					res.json({
 						status: "success",
 						message: `Utilisateur ${req.params.userId} mis à jour avec succés.`,
@@ -121,11 +109,8 @@ module.exports = {
 					});
 				}
 			});
-			// var result = await resolveAfter2Seconds();
-			// console.log(result);
-			// expected output: "resolved"
-		}
-		asyncCall();
+		})()
+		// asyncCall();
 	},
 	deleteById: function (req, res, next) {
 		models['Users'].findByIdAndRemove(req.params.userId, function (err, user) {
