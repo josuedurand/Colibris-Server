@@ -86,7 +86,7 @@ app.use(function (error, request, response, next) {
 	}
 });
 
-// serveur lancé
+// Lance le serveur
 app.listen(3000, function () {
 	console.log('\x1b[34m%s\x1b[0m', 'Serveur node lancé sur le port 3000.');
 });
