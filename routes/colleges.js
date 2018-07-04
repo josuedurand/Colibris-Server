@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const collegeController = require('../controllers/colleges');
+const
+    express = require('express'),
+    router = express.Router(),
+    collegeController = require('../controllers/colleges');
 
 router.get('/', collegeController.getAll);
 router.post('/', collegeController.create);

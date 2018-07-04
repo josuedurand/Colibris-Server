@@ -1,6 +1,7 @@
 
-const mongoose = require('mongoose');
-const url = require('../config/database').url;
+const
+    mongoose = require('mongoose'),
+    url = require('../config/database').url;
 
 mongoose.connect(url, error => {
     if (error) throw error;

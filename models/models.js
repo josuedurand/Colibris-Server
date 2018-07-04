@@ -1,25 +1,24 @@
 
-const fs       = require('fs');
-const mongoose = require('mongoose');
+const
+    fs       = require('fs'),
+    mongoose = require('mongoose');
 
+// Contiendra tous les modeles mongoose
 const allModels = {};
 
-// chargement des schémas depuis le fichier de configuration JSON dans une variable
-const database_models = JSON.parse(fs.readFileSync('models/models.json', 'utf8'));
+// Charge les schémas depuis le fichier de configuration JSON dans une constante
+const databaseModels = JSON.parse(fs.readFileSync('models/models.json', 'utf8'));
 
 // Initialisation de chaque schéma par association entre le schéma et la collection
-for (modelName in database_models) {
+for (modelName in databaseModels) {
     allModels[modelName] = mongoose.model(
             modelName,
-            database_models[modelName].schema,
-            database_models[modelName].collection
+            databaseModels[modelName].schema,
+            databaseModels[modelName].collection
         );
-    console.log("model "+ modelName + " chargé !");
+    console.log(`model ${modelName} chargé.`);
 }
 
 // console.log(allModels["Users"].schema);
 
 module.exports = allModels;
-
-
-

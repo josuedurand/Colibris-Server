@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const publisherController = require('../controllers/publishers');
+const 
+    express = require('express'),
+    router = express.Router(),
+    publisherController = require('../controllers/publishers');
 
 router.get('/', publisherController.getAll);
 router.post('/', publisherController.create);
